@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['setmap_0',['setMap',['../classBigText.html#aa65688e94addd56afdaf5a10d5aa656a',1,'BigText']]],
-  ['settext_1',['setText',['../classBigText.html#a8085111492a216e4073ba3ea0ffe9340',1,'BigText']]],
-  ['stringify_2',['STRINGIFY',['../CMakeCXXCompilerId_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'CMakeCXXCompilerId.cpp']]],
-  ['stringify_5fhelper_3',['STRINGIFY_HELPER',['../CMakeCXXCompilerId_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'CMakeCXXCompilerId.cpp']]]
+  ['platform_5fid_0',['PLATFORM_ID',['../CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'CMakeCXXCompilerId.cpp']]],
+  ['print_1',['print',['../classBigText.html#ae1490c119cc283fc4a53fd8be11afb63',1,'BigText']]],
+  ['printables_2',['printables',['../namespacebig__text__maps.html#a6ba04fd81dcd26560db5ed92fe28ce75',1,'big_text_maps']]],
+  ['punctuation_3',['punctuation',['../namespacebig__text__maps.html#a204ec83f5f1e5d15e07883c401823e10',1,'big_text_maps']]]
 ];
