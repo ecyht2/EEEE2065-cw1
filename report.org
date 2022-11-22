@@ -1,0 +1,124 @@
+#+title: EEEE2065 - Coursework 1 Report
+#+author: Tan Hong Kai - 20386501
+#+email: ecyht2@nottingham.edu.my
+#+INCLUDE: "title_page.org"
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \setlength\parindent{0pt}
+
+#+begin_comment
+Clearing TOC Page
+#+end_comment
+
+#+begin_export latex
+  \clearpage \tableofcontents \clearpage
+#+end_export
+
+* Introduction
+This report discusses the solution I arrived in when designing a software written in C++ which prints a given string into it's equivalent enlarged ASCII art version of each character.
+#+caption: Example Output of Problem Statement
+#+attr_latex: scale=0.75
+#+label: fig:ascii-art
+[[./media/ascii-art.png]]
+** Requirements
+There are a few requirements for this coursework.
+1. Take string from command line (argv).
+2. Print string into standard output.
+3. ASCII-art for all upper-case characters in a 5x5 pixels.
+4. Numbers and some basic punctuation must be supported.
+5. Ignores all unsupported characters
+
+* Implementation
+** BigText Class
+A custom class src_language[:exports code]{BigText} was created to act as a wrapper to print out a given string into it's ASCII-art variant. The class will store a string internally and when the src_language[:exports code]{void print(void)} method was use it will print out the string currently being stored into it's ASCII-art equivalent.
+
+The constructor of src_language[:exports code]{BigText} takes in 2 arguments. The first argument, string, which defaults to an empty string if not provided. This will initialize the printer class and will print out the text set during construction. The second argument, src_C++[:exports code]{*map} which is the map used by the class to determine how each character should be printed. More details about the src_C++[:exports code]{map} / src_C++[:exports code]{unordered_map} class is discussed in [[Storing ASCII Art in Maps]].
+
+There are other public methods which include src_language[:exports code]{string getText(void)} which returns the current string being stored, src_language[:exports code]{BigText& setText(string)} which sets the current text stored by the class to the given string. *Note* that the src_language[:exports code]{setText()} returns itself which is convenient when users of the class wants to set the text and print it at the same line.
+
+#+CAPTION: Final BigText Class Declaration
+#+label: fig:BigText class
+#+begin_src C++
+typedef unordered_map<char, array<string, 5>> big_text_map;
+
+class BigText {
+  public:
+    BigText(string str = "", big_text_map *map = &big_text_maps::printables);
+    void print(void);
+    string getText(void);
+    BigText& setText(string str);
+    string getSupportedCharacters(void);
+    void setMap(big_text_map *map);
+    big_text_map& getMap(void);
+  private:
+    string text;
+    string supported_characters;
+    big_text_map *big_characters;
+};
+#+end_src
+** Storing ASCII Art in Arrays
+The initial implementation of the big text printer stores all the ASCII art in an array of strings. The string class in C++ is used for a more convenient way of manipulating strings instead of the traditional C strings (char *).
+
+However, this isn't an ideal situation as each supported letter of the text printer must convert the ASCII value of the character that we are trying to print to the appropriate index of the stored ASCII art string array. A function/method must be created in order to convert the ASCII value into appropriate index value in the stored array.
+
+To solve this issue, a function must be created similar to the one shown at figure [[fig:get-char-index]] to handle this conversion between the ASCII value of each character, and it's corresponding index in the array. This is fairly simple when it is just alphabets and numbers as their values are sequential. However, when implementing basic punctuation, the ASCII values varies from place to place. This will result in a bunch of if's statements or the other symbols needs to be implemented as well.
+
+#+CAPTION: Function to convert ASCII number into array index.
+#+label: fig:get-char-index
+#+begin_src C++
+int BigText::getCharIndex(char c) {
+  int ascii_index = (int) c;
+  int index = 0;
+
+  if(ascii_index > 64 && ascii_index < 91) {
+    // Upper Case Letters
+    index = ascii_index - 64;
+  } else if (ascii_index > 96 && ascii_index < 123) {
+    // Lower Case Letters
+    index = ascii_index - 96;
+  } else if (ascii_index > 47 && ascii_index < 58) {
+    // Numbers
+    index = ascii_index - 47;
+    // Shifting by the number of alphabets
+    index += 26;
+  } else {
+    // Other characters
+    index = 0;
+  }
+
+  return index;
+}
+#+end_src
+
+Therefore, an alternative solution should be thought of in order to create a more readable code when indexing each supported characters. This is where the C++ map class comes into play. It allows indexing of any element stored in it using any representation including src_language[:exports code]{char}. A more detailed explanation on how it is implemented is discussed at [[Storing ASCII Art in Maps]].
+** Storing ASCII Art in Maps
+The map class is provided when including the src_language[:exports code]{#include <map>} header file included in the C++ standard library. The map class allows for arbitrary indexing of the values stored in the class using any types.
+
+The item used for indexing is called the key. Each key are unique for each map but the values the keys stores can be repeated. However, in this coursework, the unordered version is used. The src_C++[:exports code]{unordered_map} class is generally faster when indexing for each element, this is due to the fact that the keys in the normal src_C++[:exports code]{map} class are sorted which allows the direct iteration on subsets based on their order. This isn't required for the usage of this coursework, hence the unordered version is used instead.
+
+src_C++[:exports code]{Map} and src_C++[:exports code]{unordered_map} class uses templates to determine what types would be used for the "key" and "values". The src_C++[:exports code]{char} type is used for the key and src_C++[:exports code]{array<string, 5>} (array is another container class in C++ standard library) as it's value type. For convenience a src_C++[:exports code]{typedef} was used to simplify the typing. The BigText class takes a pointer for the map type to determine how to print each character, however there are default maps in a namespace that users can use.
+
+#+CAPTION: Code for typedef and namespace
+#+label: fig:typedef
+#+begin_src C++
+// typedef
+typedef unordered_map<char, array<string, 5>> big_text_map;
+
+// Deafult Maps
+namespace big_text_maps {
+  extern big_text_map ascii_letters;
+  extern big_text_map digits;
+  extern big_text_map punctuation;
+  extern big_text_map whitespace;
+  extern big_text_map printables;
+};
+#+end_src
+* Results
+#+caption: Program Showing all supported characters in big\under{}text\under{}maps::printables.
+#+attr_latex: scale=0.75
+#+label: fig:all-chars
+[[./media/all.png]]
+
+#+caption: Example With User Input
+#+attr_latex: scale=0.75
+#+label: fig:example
+[[./media/example.png]]
