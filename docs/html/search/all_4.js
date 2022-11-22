@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp'],['../src_2print-big-text_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'(Global Namespace)'],['../src_2print-big-text_2main_8cpp.html',1,'(Global Namespace)']]]
+  ['dec_0',['DEC',['../CMakeCXXCompilerId_8cpp.html#ad1280362da42492bbc11aa78cbf776ad',1,'CMakeCXXCompilerId.cpp']]],
+  ['digits_1',['digits',['../namespacebig__text__maps.html#ac73dc4179c922940605ab3ba02e74b84',1,'big_text_maps']]]
 ];
