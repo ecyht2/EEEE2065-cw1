@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['dec_0',['DEC',['../CMakeCXXCompilerId_8cpp.html#ad1280362da42492bbc11aa78cbf776ad',1,'CMakeCXXCompilerId.cpp']]],
-  ['digits_1',['digits',['../namespacebig__text__maps.html#ac73dc4179c922940605ab3ba02e74b84',1,'big_text_maps']]]
+  ['getmap_0',['getMap',['../classBigText.html#ad3ae95a1d24cf04e23219a238871ace8',1,'BigText']]],
+  ['getsupportedcharacters_1',['getSupportedCharacters',['../classBigText.html#a798e7968e955682927a2adf0c34b5fdc',1,'BigText']]],
+  ['gettext_2',['getText',['../classBigText.html#a487933217a2cbdef4b40f1e8c3918e76',1,'BigText']]]
 ];
