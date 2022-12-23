@@ -20,3 +20,7 @@ After compilation a directory `bin/` should be created in the repository. To run
 ``` sh
 bin/print-big-text "HELLO WORLD\!" "2 + 2 = 4"
 ```
+
+## Documentation
+
+Documentation of the coursework can be found in the project [GitHub pages](https://ecyht2.github.io/EEEE2065-cw1/).
