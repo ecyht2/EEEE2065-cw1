@@ -1,7 +1,7 @@
 # EEEE2065-cw1
 Program that prints given string in big characters using ASCII-art.
 
-The RUst implementation of the library can be found [here](https://github.com/ecyht2/print-big-text-rs).
+The Rust implementation of the library can be found [here](https://github.com/ecyht2/print-big-text-rs).
 
 ## Building
 
