@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getmap_8',['getMap',['../classBigText.html#ad3ae95a1d24cf04e23219a238871ace8',1,'BigText']]],
-  ['getsupportedcharacters_9',['getSupportedCharacters',['../classBigText.html#a798e7968e955682927a2adf0c34b5fdc',1,'BigText']]],
-  ['gettext_10',['getText',['../classBigText.html#a487933217a2cbdef4b40f1e8c3918e76',1,'BigText']]]
+  ['getmap_8',['getMap',['../classBigText.html#a0f1ccbc81f61ff4b92a0bf65e7539794',1,'BigText']]],
+  ['getsupportedcharacters_9',['getSupportedCharacters',['../classBigText.html#a49a63a807a9d72909cb5bd1d8b460829',1,'BigText']]],
+  ['gettext_10',['getText',['../classBigText.html#a3bdacc425f872f7752280954a20c7b70',1,'BigText']]]
 ];

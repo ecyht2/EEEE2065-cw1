@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['print_13',['print',['../classBigText.html#a35a13071320365730c12b3ca65a780c6',1,'BigText']]],
-  ['printables_14',['printables',['../namespacebig__text__maps.html#a6ba04fd81dcd26560db5ed92fe28ce75',1,'big_text_maps']]],
-  ['punctuation_15',['punctuation',['../namespacebig__text__maps.html#a204ec83f5f1e5d15e07883c401823e10',1,'big_text_maps']]]
+  ['operator_3c_3c_13',['operator&lt;&lt;',['../classBigText.html#a9b264aeef0c38f911c1d5efa4557898c',1,'BigText::operator&lt;&lt;()'],['../big-text_8cpp.html#a9b264aeef0c38f911c1d5efa4557898c',1,'operator&lt;&lt;():&#160;big-text.cpp']]]
 ];

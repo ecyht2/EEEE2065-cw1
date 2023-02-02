@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bigtext_20',['BigText',['../classBigText.html',1,'']]]
+  ['bigtext_21',['BigText',['../classBigText.html',1,'']]]
 ];

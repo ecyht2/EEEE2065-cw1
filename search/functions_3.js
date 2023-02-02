@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['print_31',['print',['../classBigText.html#a35a13071320365730c12b3ca65a780c6',1,'BigText']]]
+  ['operator_3c_3c_32',['operator&lt;&lt;',['../big-text_8cpp.html#a9b264aeef0c38f911c1d5efa4557898c',1,'big-text.cpp']]]
 ];
