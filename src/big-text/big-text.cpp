@@ -14,7 +14,7 @@ BigText::BigText(string str, big_text_map *map): big_characters(map), text(str) 
   }
 }
 
-void BigText::print() {
+void BigText::print(ostream &stream) {
   // Looping over 5 lines
   for(int i = 0; i < 5; i ++) {
     // Looping over the all characters
@@ -22,15 +22,15 @@ void BigText::print() {
       char current_char = text[j];
 
       if (big_characters->count(current_char) == 0) {
-        cout << "      ";
+        stream << "      ";
         continue;
       }
       // Printing Characters
-      cout << big_characters->at(current_char)[i] << " ";
+      stream << big_characters->at(current_char)[i] << " ";
     }
 
     // Printing New Line
-    cout << endl;
+    stream << endl;
   }
 }
 

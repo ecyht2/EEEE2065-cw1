@@ -4,6 +4,7 @@
 #include <string>
 #include <unordered_map>
 #include <array>
+#include <iostream>
 
 using namespace std;
 
@@ -33,8 +34,11 @@ class BigText {
      * @param *map big_text_map to use.
      */
     BigText(string str = "", big_text_map *map = &big_text_maps::printables);
-    /** Prints the stored string. */
-    void print(void);
+    /** Prints the stored string.
+     *
+     * @param stream The stream to print to.
+     * */
+    void print(ostream &stream = std::cout);
     /** Gets the text currently text stored in the class.
      *
      * @return The current stored text.
