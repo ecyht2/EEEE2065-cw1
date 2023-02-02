@@ -14,7 +14,7 @@ BigText::BigText(string str, big_text_map *map): big_characters(map), text(str) 
   }
 }
 
-void BigText::print(ostream &stream) {
+void BigText::print(ostream &stream) const {
   // Looping over 5 lines
   for(int i = 0; i < 5; i ++) {
     // Looping over the all characters
@@ -34,7 +34,7 @@ void BigText::print(ostream &stream) {
   }
 }
 
-string BigText::getText() {
+string BigText::getText() const {
   return this->text;
 }
 
@@ -43,7 +43,7 @@ BigText& BigText::setText(string str) {
   return *this;
 }
 
-string BigText::getSupportedCharacters(void) {
+string BigText::getSupportedCharacters(void) const {
   return supported_characters;
 }
 
@@ -58,8 +58,18 @@ void BigText::setMap(big_text_map *map) {
   }
 }
 
-big_text_map& BigText::getMap() {
+big_text_map& BigText::getMap() const {
   return *this->big_characters;
+}
+
+/** Operator overloading to print the store string to the output stream.
+  *
+  * @param out The stream to print to.
+  * @param cls The BitText class to print.
+  * */
+ostream& operator << (ostream &out, const BigText &cls) {
+  cls.print(out);
+  return out;
 }
 
 /** Default big_text_map definitions
